@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "482403824641",
+    "project_id": "sih-2024-dopeshield",
+    "storage_bucket": "sih-2024-dopeshield.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482403824641:android:48df0f734cfb2d0d277c00",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkqkOSZypY-3PGX0_Jpt7B5p-sM6Hn6gM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482403824641:android:f8ef67fdab3014d1277c00",
+        "android_client_info": {
+          "package_name": "com.example.dopeshield"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkqkOSZypY-3PGX0_Jpt7B5p-sM6Hn6gM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
