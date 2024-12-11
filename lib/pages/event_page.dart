@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:dopeshield/utilities/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../components/common/text.dart';
 import '../utilities/theme.dart';
+import '../utilities/constants.dart';
 
 class EventPage extends StatelessWidget {
   const EventPage({super.key});

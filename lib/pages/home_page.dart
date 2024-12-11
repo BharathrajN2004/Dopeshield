@@ -7,6 +7,7 @@ import 'package:material_symbols_icons/material_symbols_icons.dart';
 
 import '../components/common/network_image.dart';
 import '../components/common/text.dart';
+import '../functions/firebase_auth.dart';
 import '../utilities/constants.dart';
 import '../utilities/theme.dart';
 import 'article_page.dart';
@@ -15,16 +16,16 @@ import 'casestudy_page.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  static String name = "Bharathraj";
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     double aspectRatio = MediaQuery.of(context).size.aspectRatio;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    String name = AuthFB().currentUser!.displayName!;
+
+    return ListView(
+      scrollDirection: Axis.vertical,
       children: [
         Row(
           children: [

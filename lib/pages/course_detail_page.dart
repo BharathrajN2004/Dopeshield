@@ -1,14 +1,62 @@
-import 'package:dopeshield/components/common/text.dart';
-import 'package:dopeshield/utilities/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../components/common/page_header.dart';
+import '../components/common/text.dart';
 import '../utilities/constants.dart';
+import '../utilities/theme.dart';
 
-class CourseDetailPage extends StatelessWidget {
+class CourseDetailPage extends StatefulWidget {
   const CourseDetailPage({super.key, required this.data});
 
-  final Map<String, String> data;
+  final Map<String, dynamic> data;
+
+  @override
+  State<CourseDetailPage> createState() => _CourseDetailPageState();
+}
+
+class _CourseDetailPageState extends State<CourseDetailPage> {
+  String selectedLanguage = languages[0];
+  late YoutubePlayerController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    final videoId =
+        YoutubePlayer.convertUrlToId(widget.data["video"][selectedLanguage])!;
+    controller = YoutubePlayerController(
+      initialVideoId: videoId,
+      flags: const YoutubePlayerFlags(
+        autoPlay: false,
+        showLiveFullscreenButton: false,
+        // hideControls: true,
+        isLive: false
+      ),
+    );
+  }
+
+  void setLang(String language) {
+    setState(() {
+      selectedLanguage = language;
+      final videoId =
+          YoutubePlayer.convertUrlToId(widget.data["video"][selectedLanguage])!;
+
+      controller = YoutubePlayerController(
+        initialVideoId: videoId,
+        flags: const YoutubePlayerFlags(
+          autoPlay: false,
+          showLiveFullscreenButton: false,isLive: false,
+          // hideControls: true,
+        ),
+      );
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +74,7 @@ class CourseDetailPage extends StatelessWidget {
             const PageHeader(tittle: "Course detail"),
             SizedBox(height: height * 0.04),
             CustomText(
-              text: data["description"]!,
+              text: widget.data["description"]!,
               size: 36,
               maxLine: 3,
               align: TextAlign.center,
@@ -48,7 +96,11 @@ class CourseDetailPage extends StatelessWidget {
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.network(data["url"]!, fit: BoxFit.cover),
+                child: YoutubePlayer(
+                  controller: controller,
+                  showVideoProgressIndicator: true,
+                  key: ObjectKey(controller),
+                ),
               ),
             ),
             Wrap(
@@ -56,24 +108,32 @@ class CourseDetailPage extends StatelessWidget {
               spacing: aspectRatio * 20,
               alignment: WrapAlignment.center,
               children: languages
-                  .map((e) => Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: width * 0.03,
-                          vertical: aspectRatio * 8,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: secondaryColor.withOpacity(.2),
-                          border: Border.all(
-                            color: secondaryColor.withOpacity(.4),
-                            width: 2,
-                            strokeAlign: BorderSide.strokeAlignCenter,
+                  .map((e) => GestureDetector(
+                        onTap: () => setLang(e),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: width * 0.03,
+                            vertical: aspectRatio * 8,
                           ),
-                        ),
-                        child: CustomText(
-                          text: e,
-                          size: 23,
-                          weight: FontWeight.w900,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: e == selectedLanguage
+                                ? gradientColor2.withOpacity(.6)
+                                : secondaryColor.withOpacity(.2),
+                            border: Border.all(
+                              color: e == selectedLanguage
+                                  ? gradientColor2
+                                  : secondaryColor.withOpacity(.4),
+                              width: 2,
+                              strokeAlign: BorderSide.strokeAlignCenter,
+                            ),
+                          ),
+                          child: CustomText(
+                            text: e.toUpperCase(),
+                            size: 23,
+                            weight: FontWeight.w900,
+                            color: e == selectedLanguage ? Colors.white : null,
+                          ),
                         ),
                       ))
                   .toList(),
@@ -82,7 +142,7 @@ class CourseDetailPage extends StatelessWidget {
             Expanded(
                 child: SingleChildScrollView(
               child: CustomTextWidget(
-                inputText: data["data"]!,
+                inputText: widget.data["data"]!,
               ),
             ))
           ],

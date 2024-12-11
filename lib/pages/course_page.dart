@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:dopeshield/components/common/network_image.dart';
-import 'package:dopeshield/utilities/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../components/common/network_image.dart';
 import '../components/common/text.dart';
 import '../utilities/theme.dart';
 import 'course_detail_page.dart';
+import '../utilities/constants.dart';
 
 class CoursePage extends StatefulWidget {
   const CoursePage({super.key});
@@ -167,7 +167,7 @@ class _CoursePageState extends State<CoursePage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => CourseDetailPage(
-                            data: Map<String, String>.from(courseData[index]),
+                            data: Map<String, dynamic>.from(courseData[index]),
                           ),
                         ),
                       );

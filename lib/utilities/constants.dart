@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+enum LoginSignup { login, signup }
+
+enum From { detail, add, edit }
+
 const List<String> categories = [
   "Boxing",
   "Hockey",
@@ -59,12 +63,12 @@ List<Map<String, dynamic>> gameData = [
 ];
 
 List<String> languages = [
-  "ENGLISH",
-  "TAMIL",
-  "KANNADA",
-  "MALAYALAM",
-  "TELUGU",
-  "HINDI"
+  "English",
+  "Tamil",
+  "Kannada",
+  "Malayalam",
+  "Telugu",
+  "Hindi"
 ];
 
 List<String> rebuildTopics = [
@@ -290,6 +294,14 @@ List<Map<String, dynamic>> courseData = [
     "url": "https://dope-2024.github.io/sih/static/pictures/Course1.png",
     "level": "Beginner",
     "description": "Introduction to Anti-Doping Education",
+    "video": {
+      "Tamil": "https://youtu.be/gdTC1ya1yfQ",
+      "Telugu": "https://youtu.be/BcAMZeiAdSM",
+      "Malayalam": "https://youtu.be/IChXglZy78o",
+      "Hindi": "https://youtu.be/wLq7BqxczDI",
+      "English": "https://youtu.be/REchfi3z3Vg",
+      "Kannada": "https://youtu.be/mNvV-J186bs",
+    },
     "data": '''
 **Module 1: What is Doping?**
 
@@ -383,6 +395,14 @@ By working together, we can create a future where athletes compete fairly and ho
     "url": "https://dope-2024.github.io/sih/static/pictures/Course3.png",
     "level": "Intermediate",
     "description": "Anti-Doping Rules, Regulations, and Legalities",
+    "video": {
+      "Tamil": "https://youtu.be/Xv6kQRlJSTg",
+      "Telugu": "https://youtu.be/c39zPHXGixU",
+      "Malayalam": "https://youtu.be/O_GehIU47mg",
+      "Hindi": "https://youtu.be/RAOYq6Tn2P4",
+      "English": "https://youtu.be/GV5b5MqbR2M",
+      "Kannada": "https://youtu.be/45ei79HaaBs",
+    },
     "data": '''
 
 **Module 1: Overview of Prohibited Substances and Methods**
@@ -595,6 +615,14 @@ Athletes must be aware of potential sanctions, including suspensions, disqualifi
     "url": "https://dope-2024.github.io/sih/static/pictures/Course5.png",
     "level": "Advanced",
     "description": "Comprehensive Education and Athlete Support",
+    "video": {
+      "Tamil": "https://youtu.be/VZHK_HKt17s",
+      "Telugu": "https://youtu.be/kVcAoTog360",
+      "Malayalam": "https://youtu.be/TdNSHHhMgbE",
+      "Hindi": "https://youtu.be/zsGQISH2zts",
+      "English": "https://youtu.be/rhUkPKIm-24",
+      "Kannada": "https://youtu.be/u_6vQHuHcxI",
+    },
     'data': '''
 
 **Module 1: Education for Athletes and Coaches**
@@ -840,6 +868,14 @@ For Trusted Support:
     "url": "https://dope-2024.github.io/sih/static/pictures/Course2.png",
     "level": "Beginner",
     "description": "Understanding Doping and Its Consequences",
+    "video": {
+      "Tamil": "https://youtu.be/h7kjNncOdwg",
+      "Telugu": "https://youtu.be/FhgC4yiSQNw",
+      "Malayalam": "https://youtu.be/MndhHXun4xI",
+      "Hindi": "https://youtu.be/4LcMZbhKIGc",
+      "English": "https://youtu.be/WzUj4JYti6Q",
+      "Kannada": "https://youtu.be/Nm3dGZPtCqk",
+    },
     'data': '''
 
 **Module 1: Types of Doping Substances**
@@ -1046,6 +1082,14 @@ Addressing these issues requires a multi-pronged approach involving strict anti-
     "url": "https://dope-2024.github.io/sih/static/pictures/Course4.png",
     "level": "Intermediate",
     "description": "Testing, Detection, and Athlete Rights",
+    "video": {
+      "Tamil": "https://youtu.be/akIN3fPAyQM",
+      "Telugu": "https://youtu.be/Y2VhUVnHKvg",
+      "Malayalam": "https://youtu.be/qt-iPOM_MrE",
+      "Hindi": "https://youtu.be/kgnIwfEDdik",
+      "English": "https://youtu.be/jPeVIR6v10Y",
+      "Kannada": "https://youtu.be/Dby62hFpSZk",
+    },
     "data": '''
 **Module 1: The Testing Process**
 

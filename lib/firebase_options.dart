@@ -50,19 +50,22 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCkqkOSZypY-3PGX0_Jpt7B5p-sM6Hn6gM',
-    appId: '1:482403824641:android:f8ef67fdab3014d1277c00',
-    messagingSenderId: '482403824641',
-    projectId: 'sih-2024-dopeshield',
-    storageBucket: 'sih-2024-dopeshield.firebasestorage.app',
+    apiKey: 'AIzaSyAb9OWzaRg0mOmvbySFVFecHQ9J5_EG4vo',
+    appId: '1:496638349075:android:1e97e98eba565005c394e6',
+    messagingSenderId: '496638349075',
+    projectId: 'dopeshield-fa348',
+    databaseURL: 'https://dopeshield-fa348-default-rtdb.firebaseio.com',
+    storageBucket: 'dopeshield-fa348.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB9wMB6H-orLmwryPFzblfZIGFez5XEijY',
-    appId: '1:482403824641:ios:1a3648f1f98526e2277c00',
-    messagingSenderId: '482403824641',
-    projectId: 'sih-2024-dopeshield',
-    storageBucket: 'sih-2024-dopeshield.firebasestorage.app',
+    apiKey: 'AIzaSyAFaDKdfr6xJM9RlrVuIJu8DmczcLrAADU',
+    appId: '1:496638349075:ios:bd1e439bc34e1b70c394e6',
+    messagingSenderId: '496638349075',
+    projectId: 'dopeshield-fa348',
+    databaseURL: 'https://dopeshield-fa348-default-rtdb.firebaseio.com',
+    storageBucket: 'dopeshield-fa348.firebasestorage.app',
     iosBundleId: 'com.example.dopeshield',
   );
+
 }

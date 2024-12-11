@@ -1,7 +1,7 @@
-import 'package:dopeshield/utilities/theme.dart';
 import 'package:flutter/material.dart';
 
 import '../common/text.dart';
+import '../../utilities/theme.dart';
 
 class ProfileTile extends StatelessWidget {
   final String text;
@@ -16,7 +16,6 @@ class ProfileTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     double aspectRatio = MediaQuery.of(context).size.aspectRatio;

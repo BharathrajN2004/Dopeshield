@@ -1,9 +1,10 @@
-import 'package:dopeshield/utilities/theme.dart';
 import 'package:flutter/material.dart';
 
 import '../components/common/network_image.dart';
 import '../components/common/text.dart';
 import '../components/profile/profile_tile.dart';
+import '../functions/firebase_auth.dart';
+import '../utilities/theme.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -44,14 +45,14 @@ class ProfilePage extends StatelessWidget {
         // : const SizedBox(),
         SizedBox(height: height * 0.02),
         CustomText(
-          text: "Bharathraj N",
+          text: AuthFB().currentUser!.displayName!,
           size: 36,
           weight: FontWeight.w800,
           color: textColor.withOpacity(.8),
         ),
         SizedBox(height: height * 0.005),
         CustomText(
-          text: "bharathrajnarashiman@gmail.com",
+          text: AuthFB().currentUser!.email!,
           color: textColor.withOpacity(.6),
         ),
         SizedBox(height: height * 0.05),
@@ -73,7 +74,7 @@ class ProfilePage extends StatelessWidget {
           text: 'Logout',
           icon: Icons.logout_outlined,
           todo: () {
-            // AuthFB().signOut(ref: ref);
+            AuthFB().signOut();
             // Navigator.pop(context);
           },
         ),
