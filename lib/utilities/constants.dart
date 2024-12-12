@@ -7,7 +7,7 @@ enum From { detail, add, edit }
 const List<String> categories = [
   "Boxing",
   "Hockey",
-  "Athelitics",
+  "Athletics",
   "Soccer",
   "Tennis",
   "Wrestling",
@@ -85,7 +85,7 @@ List<Map<String, String>> articleData = [
   {
     "url":
         "https://ss-i.thgim.com/public/incoming/ljayte/article68882836.ece/alternates/LANDSCAPE_1200/AFP_18P8EY.jpg",
-    "sport": "ATHELITICS",
+    "sport": "ATHLETICS",
     "title": "Asiad Gold medallist Vismaya fails doping test",
     "date": "18 November 2024",
     "data":
